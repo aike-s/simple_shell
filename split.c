@@ -12,7 +12,7 @@ char **_split(garbage_collector_t *GC, char *line)
 	char **tokens, *tmp_line;
 	int i;
 
-	tokens = GC->malloc(GC, sizeof(char *) * 32);
+	tokens = GC->malloc(GC, sizeof(char *) * 64);
 	if (tokens == NULL)
 	{
 		perror("Error");
