@@ -22,7 +22,7 @@ int main(int arc, char **arv, char **env)
 	signal(SIGINT, handle_sigint); /* <-- ctrl + c */
 
 	while (1)
-	{write(1, "$ ", 2);
+	{write(0, "$ ", 2);
 		char_read = getline(&line, &bufsize, stdin);
 		if (char_read == -1) /* EOF -> Ctrl+d */
 		{GC->free_all(GC);
