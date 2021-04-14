@@ -18,7 +18,7 @@ int compare_str(char *str1, char *str2)
 }
 
 /**
- * _putchar - Function to print a character
+ * _putchar - Function to print a character in standard error
  * @character: The character to print
  * Return: always 1
  */
@@ -38,7 +38,7 @@ int _strlen(char *str)
 	int len;
 
 	for (len = 0; str && str[len] != '\0'; len++)
-	{}
+	{	}
 	return (len);
 }
 /**
@@ -61,4 +61,25 @@ void print_number(int n)
 		print_number(counter / 10);
 
 	_putchar(counter % 10 + '0');
+}
+
+/**
+ * print_env - function to print env
+ * @env: enviroment
+ * Return: o on success
+ **/
+int print_env(char **env)
+{
+	unsigned int i = 0, j;
+
+	while (env[i] != NULL)
+	{
+		for (j = 0; env[i][j] != '\0'; j++)
+		{
+			_putchar2(env[i][j]);
+		}
+		_putchar('\n');
+		i++;
+	}
+	return (0);
 }

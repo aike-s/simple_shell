@@ -8,20 +8,14 @@
  **/
 dir_t *add_nodeint_end(garbage_collector_t *GC, dir_t **head, char *directory)
 {
-	/*mirar en shell.h la struct*/
 	dir_t *new_box, *last;
 
 	if (!head)
 		return (0);
-	/*IMPORTANTE: hay que tener cuidado con este malloc y asegurarnos */
-	/* de liberarlo en el momento indicado, podria ser con la funcion */
-	/* que hicimos: free_list*/
 	new_box = GC->malloc(GC, sizeof(dir_t));
 	if (new_box == NULL)
 		return (NULL);
-	/*AUTZILIO: aqui no estoy segura de si realmente le estaria pasando el */
-	/*puntero al directorio*/
-	new_box->directory = directory; /*ya la corregi att samu xd */
+	new_box->directory = directory;
 	new_box->next = NULL;
 	if (*head != NULL)
 	{
@@ -105,4 +99,14 @@ void handle_sigint(int sig)
 	{
 		write(1, "\n$ ", 4);
 	}
+}
+/**
+ * _putchar2 - Function to print a character in standard output
+ * @character: The character to print
+ * Return: always 1
+ */
+int _putchar2(char character)
+{
+	write(1, &character, 1);
+	return (1);
 }

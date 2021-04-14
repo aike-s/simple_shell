@@ -55,7 +55,7 @@ void free_garbage_collector(garbage_collector_t *GC);
 dir_t *dir_list(garbage_collector_t *GC, char *path);
 /* register_token - looks for the existence of a command*/
 char *register_token(garbage_collector_t *GC, char *argument, dir_t *head,
-size_t count);
+		     size_t count);
 /* find_command - find if the pateh exists*/
 char *find_command(garbage_collector_t *GC, dir_t *nodo, char *command);
 /* _split - function to cut into pieces the line that sent us */
@@ -63,7 +63,7 @@ char *find_command(garbage_collector_t *GC, dir_t *nodo, char *command);
 char **_split(garbage_collector_t *GC, char *line);
 /* exec - creates a child process and executes the file mentioned */
 int exec(garbage_collector_t *GC, char *cmd_argumment[], char **env,
-char *line);
+	 char *line);
 /* get_error -  Function that prints errors */
 void get_error(size_t count, char *line_argument);
 
@@ -76,15 +76,19 @@ char *str_concat(garbage_collector_t *GC, char *s1, char *s2);
 void copy_path_from_env(char **env, char *path);
 /* handle_sigint - Function to handle Ctrl + C */
 void handle_sigint(int sig);
+/* _putchar2 -Function to print a character on standard output*/
+int _putchar2(char character);
 
 /*TOOLS 2*/
 /* compare_str - compare two strings*/
 int compare_str(char *str1, char *str2);
-/* _putchar -Function to print a character */
+/* _putchar -Function to print a character on standard error*/
 int _putchar(char character);
 /* strlen - function to count the length of a string */
 int _strlen(char *str);
 /* print_number - function that prints numbers only */
 void print_number(int n);
+/*print_env - function to print env*/
+int print_env(char **env);
 
 #endif
