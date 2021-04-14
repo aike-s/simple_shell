@@ -74,13 +74,13 @@ garbage_collector_t *create_garbage_collector(void)
 	if (GC == NULL)
 		return (NULL);
 
-	GC->subscriptions = malloc(BUFFER_SIZE * sizeof(void *));
+	GC->subscriptions = malloc(1024 * sizeof(void *));
 	if (GC->subscriptions == NULL)
 	{
 		free(GC);
 		return (NULL);
 	}
-	GC->subscriptions_free = malloc(BUFFER_SIZE * sizeof(void *));
+	GC->subscriptions_free = malloc(1024 * sizeof(void *));
 	if (GC->subscriptions_free == NULL)
 	{
 		free(GC->subscriptions);

@@ -1,5 +1,6 @@
 #ifndef SHELL_H
 #define SHELL_H
+#define _GNU_SOURCE
 
 #include <stdio.h>
 #include <string.h>
@@ -11,8 +12,8 @@
 #include <stdlib.h>
 
 /* MACROS */
-#define BUFFER_SIZE (3072)
-#define VOID __attribute__((unused))
+/* #define BUFFER_SIZE (3072) */
+/* #define VOID __attribute__((unused)) */
 
 /**
  * struct dir_t - structure for the directories

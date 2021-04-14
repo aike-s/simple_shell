@@ -1,3 +1,4 @@
+
 #include "shell.h"
 /**
  * main - main donde llamamos a todas las funciones necesarías
@@ -9,14 +10,16 @@
  */
 int main(int arc, char **arv, char **env)
 {
-	(void)arc;
-	(void)arv;
 
-	char *line = NULL, **tokens, path[BUFFER_SIZE];
+	char * line = NULL;
+	char **tokens;
+	char path[1024];
 	garbage_collector_t *GC;
 	dir_t *head;
 	size_t bufsize = 0, count = 1;
 	ssize_t char_read;
+	(void)arc;
+	(void)arv;
 
 	GC = create_garbage_collector();
 	copy_path_from_env(env, path);
