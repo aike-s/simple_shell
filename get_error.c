@@ -9,12 +9,7 @@ void get_error(size_t count, char *line_argument)
 {
 	int length = 0;
 
-	length = _strlen(line_argument);
-	if (line_argument[0] == '\n') /*si es un enter*/
-	{
-		write(STDERR_FILENO, "", 1);
-	}
-	else if (length < 256)
+	if (length < 256)
 	{
 		write(STDERR_FILENO, "/bin/hsh: ", 11);
 		print_number(count);
