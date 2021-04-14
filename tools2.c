@@ -43,20 +43,10 @@ int _strlen(char *str)
 }
 /**
  * print_number - function that prints numbers only
- * @n: number to print
+ * @counter: number to print
  */
-void print_number(int n)
+void print_number(size_t counter)
 {
-	unsigned int counter;
-
-	if (n < 0)
-	{
-		_putchar('-');
-		counter = -n;
-	}
-	else
-		counter = n;
-
 	if (counter / 10)
 		print_number(counter / 10);
 
@@ -78,7 +68,7 @@ int print_env(char **env)
 		{
 			_putchar2(env[i][j]);
 		}
-		_putchar('\n');
+		_putchar2('\n');
 		i++;
 	}
 	return (0);

@@ -87,7 +87,7 @@ int _putchar(char character);
 /* strlen - function to count the length of a string */
 int _strlen(char *str);
 /* print_number - function that prints numbers only */
-void print_number(int n);
+void print_number(size_t counter);
 /*print_env - function to print env*/
 int print_env(char **env);
 
