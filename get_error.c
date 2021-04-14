@@ -16,6 +16,7 @@ void get_error(size_t count, char *line_argument)
 		write(STDERR_FILENO, ": ", 2);
 		write(STDERR_FILENO, line_argument, length);
 		write(STDERR_FILENO, ": not found\n", 13);
+		/* exit(127); */
 	}
 	else
 	{
@@ -24,5 +25,6 @@ void get_error(size_t count, char *line_argument)
 		write(STDERR_FILENO, ": ", 2);
 		write(STDERR_FILENO, line_argument, length);
 		write(STDERR_FILENO, ": File name too long\n", 22);
+		/* exit(0); */
 	}
 }

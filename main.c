@@ -27,7 +27,7 @@ int main(int arc, char **arv, char **env)
 		if (char_read == -1) /* EOF -> Ctrl+d */
 		{GC->free_all(GC);
 			free_garbage_collector(GC), free(GC), free(line);
-			_putchar('\n');
+			/* _putchar('\n'); */
 			return (0);
 		}
 		line[char_read - 1] = '\0';
