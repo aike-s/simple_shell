@@ -14,6 +14,9 @@ size_t count)
 	int existing = 0;
 	char *question;
 
+	if (argument == NULL)
+		return (NULL);
+
 	if (argument[0] == '/')
 	{
 		/*interactive mode*/
