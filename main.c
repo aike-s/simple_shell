@@ -10,10 +10,7 @@
  */
 int main(int arc, char **arv, char **env)
 {
-
-	char * line = NULL;
-	char **tokens;
-	char path[1024];
+	char *line = NULL, **tokens, path[1024];
 	garbage_collector_t *GC;
 	dir_t *head;
 	size_t bufsize = 0, count = 1;
