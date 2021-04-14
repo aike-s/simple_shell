@@ -32,7 +32,7 @@ int main(int arc, char **arv, char **env)
 		}
 		line[char_read - 1] = '\0';
 		tokens = _split(GC, line);
-		if (compare_str(tokens[0], "env"))
+		if (compare_str(tokens[0], "env") && (_strlen(tokens[0]) == 3))
 		{print_env(env);
 			continue;
 		}
