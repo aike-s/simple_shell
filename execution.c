@@ -26,7 +26,7 @@ char *line)
 			free_garbage_collector(GC);
 			free(GC);
 			free(line);
-			exit(2);
+			exit(127);
 		}
 	}
 	else

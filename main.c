@@ -25,21 +25,21 @@ int main(int arc, char **arv, char **env)
 	{write(0, "$ ", 2);
 		char_read = getline(&line, &bufsize, stdin);
 		if (char_read == -1) /* EOF -> Ctrl+d */
-		{GC->free_all(GC);
+		{	GC->free_all(GC);
 			free_garbage_collector(GC), free(GC), free(line);
 			/* _putchar('\n'); */
 			return (0);
 		}
 		line[char_read - 1] = '\0';
 		tokens = _split(GC, line);
-		if (compare_str(tokens[0], "env") && (_strlen(tokens[0]) == 3))
-		{print_env(env);
+		if (compare_str(tokens[0], "env") && (_strlen(tokens[0]) <= 3))
+		{	print_env(env);
 			continue;
 		}
 		if (compare_str(tokens[0], "exit"))
-		{GC->free_all(GC);
+		{	GC->free_all(GC);
 			free_garbage_collector(GC), free(GC), free(line);
-			exit(98);
+			exit(0);
 			return (0);
 		}
 		tokens[0] = register_token(GC, tokens[0], head, count++);
