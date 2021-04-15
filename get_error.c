@@ -7,7 +7,10 @@
  */
 void get_error(size_t count, char *line_argument)
 {
-	int length = 0;
+	int length;
+
+	for (length = 0; line_argument[length] != '\0'; length++)
+	{}
 
 	if (length < 256)
 	{
