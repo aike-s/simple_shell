@@ -2,7 +2,7 @@
     <img  src="https://blog.desdelinux.net/wp-content/uploads/2019/01/bash-logo.jpg" width="400" height="200">
 </p>
 
-# **_Shell_**
+# **_Simple Shell Project_**
 
 In this repository you will find our version of a simple UNIX command interpreter: Shell.
 
