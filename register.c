@@ -17,7 +17,7 @@ size_t count)
 	if (argument == NULL)
 		return (NULL);
 
-	if (argument[0] == '/')
+	if (argument[0] == '/' || argument[0] == '.')
 	{
 		/*interactive mode*/
 		existing = access(argument, X_OK);
