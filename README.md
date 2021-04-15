@@ -35,6 +35,9 @@ man ./man_1_simple_shell
 |[_man_1_simple_shell_](./man_1_simple_shell)|man-page for the program  shell.|
 |[_AUTHORS_](./AUTHORS)|  File in which the people who contributed to this project are listed. |
 
+## Flowchart
+
+Through this link you can find the flowchart where we explain how the program works:  <a href="https://miro.com/welcomeonboard/1yqrjFsKFskz7RDAhljwN6XcEDHDXSLPYGGVCgJXGxCyhILHZOj0TJQzbxpyBR86">Here</a>
 
 
 ## ¿How to compile?
