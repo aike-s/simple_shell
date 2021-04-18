@@ -1,11 +1,11 @@
 #include "shell.h"
 /**
  * _malloc - Save in memory
- * @GC: garbage collector
+ * @M_GC: garbage collector
  * @size: size
  * Return: pointer in a new position
  */
-void *_malloc(garbage_collector_t *GC, size_t size)
+void *_malloc(M_GC, size_t size)
 {
 	unsigned long i;
 
@@ -24,12 +24,12 @@ void *_malloc(garbage_collector_t *GC, size_t size)
 /**
  * search_free - look for the mallocs to free
  *
- * @GC: Garbage Colector
+ * @M_GC: Garbage Colector
  * @current_to_do_free: Liberates the current malloc
  * Return: 1
  */
 
-int search_free(garbage_collector_t *GC, void *current_to_do_free)
+int search_free(M_GC, void *current_to_do_free)
 {
 	int i;
 
@@ -43,10 +43,10 @@ int search_free(garbage_collector_t *GC, void *current_to_do_free)
 
 /**
  * _free_all - libera
- * @GC: garbage collector
+ * @M_GC: garbage collector
  * Return: always void
  */
-void _free_all(garbage_collector_t *GC)
+void _free_all(M_GC)
 {
 	while (GC->malloc_acumulator > 0)
 	{
@@ -68,7 +68,7 @@ void _free_all(garbage_collector_t *GC)
  */
 garbage_collector_t *create_garbage_collector(void)
 {
-	garbage_collector_t *GC;
+	M_GC;
 
 	GC = malloc(sizeof(garbage_collector_t));
 	if (GC == NULL)
@@ -97,9 +97,9 @@ garbage_collector_t *create_garbage_collector(void)
 /**
  * free_garbage_collector - Liberate the function Grabe_colector
  *
- * @GC: garbage collector
+ * @M_GC: garbage collector
  */
-void free_garbage_collector(garbage_collector_t *GC)
+void free_garbage_collector(M_GC)
 {
 
 	free(GC->subscriptions_free);

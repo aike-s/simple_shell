@@ -4,11 +4,11 @@
  * to the command if it exists or NULL if it does not.
  * @argument: the token sended
  * @head: head of the node
- * @GC: parameter to make release of mallocs
+ * @M_GC: parameter to make release of mallocs
  * @count: count
  * Return: the right path or NULL if the token does not exist
  **/
-char *register_token(garbage_collector_t *GC, char *argument, dir_t *head,
+char *register_token(M_GC, char *argument, dir_t *head,
 size_t count)
 {
 	int existing = 0;

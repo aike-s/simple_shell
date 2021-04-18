@@ -3,10 +3,10 @@
  * add_nodeint_end - adds a new node at the end of a dir_t list
  * @head: pointer to the list
  * @directory: directory to put in the list
- * @GC: parameter to make release of mallocs
+ * @M_GC: parameter to make release of mallocs
  * Return: the address of the new element, or NULL if it failed
  **/
-dir_t *add_nodeint_end(garbage_collector_t *GC, dir_t **head, char *directory)
+dir_t *add_nodeint_end(M_GC, dir_t **head, char *directory)
 {
 	dir_t *new_box, *last;
 
@@ -41,10 +41,10 @@ dir_t *add_nodeint_end(garbage_collector_t *GC, dir_t **head, char *directory)
  * str_concat - concatenates two strings
  * @s1: string1
  * @s2: string2
- * @GC: parameter to make release of mallocs
+ * @M_GC: parameter to make release of mallocs
  * Return: char
  **/
-char *str_concat(garbage_collector_t *GC, char *s1, char *s2)
+char *str_concat(M_GC, char *s1, char *s2)
 {
 	char *ptr;
 	int j, i;

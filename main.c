@@ -2,19 +2,18 @@
 /**
  * main - main donde llamamos a todas las funciones necesarías
  *
- * @arc: arc void
- * @arv: arv void
+ * @VOID_ARC: arc void
+ * @VOID_ARV: arv void
  * @env: enviromment donde traemos todos los formatos necesarios
  * Return: Always 0
  */
-int main(int arc, char **arv, char **env)
+int main(VOID_ARC, VOID_ARV, char **env)
 {
 	char *line = NULL, **tokens, path[1024];
 	garbage_collector_t *GC;
 	dir_t *head;
 	size_t bufsize = 0, count = 1;
 	ssize_t char_read;
-	(void)arc, (void)arv;
 
 	GC = create_garbage_collector();
 	copy_path_from_env(env, path);

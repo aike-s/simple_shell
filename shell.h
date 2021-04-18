@@ -12,8 +12,10 @@
 #include <stdlib.h>
 
 /* MACROS */
-/* #define BUFFER_SIZE (3072) */
-/* #define VOID __attribute__((unused)) */
+#define M_GC garbage_collector_t *GC
+#define VOID_ARC int arc __attribute__((unused))
+#define VOID_ARV char **arv __attribute__((unused))
+
 
 /**
  * struct dir_t - structure for the directories
@@ -48,30 +50,28 @@ typedef struct _garbage
 
 garbage_collector_t *create_garbage_collector(void);
 
-void free_garbage_collector(garbage_collector_t *GC);
+void free_garbage_collector(M_GC);
 
 /*IMPORTANT FUNCTIONS*/
 /* dir_list - make a liked list with the directories*/
-dir_t *dir_list(garbage_collector_t *GC, char *path);
+dir_t *dir_list(M_GC, char *path);
 /* register_token - looks for the existence of a command*/
-char *register_token(garbage_collector_t *GC, char *argument, dir_t *head,
-		     size_t count);
+char *register_token(M_GC, char *argument, dir_t *head, size_t count);
 /* find_command - find if the pateh exists*/
-char *find_command(garbage_collector_t *GC, dir_t *nodo, char *command);
+char *find_command(M_GC, dir_t *nodo, char *command);
 /* _split - function to cut into pieces the line that sent us */
 /* and organize them as pointers to each string of the line */
-char **_split(garbage_collector_t *GC, char *line);
+char **_split(M_GC, char *line);
 /* exec - creates a child process and executes the file mentioned */
-int exec(garbage_collector_t *GC, char *cmd_argumment[], char **env,
-	 char *line);
+int exec(M_GC, char *cmd_argumment[], char **env, char *line);
 /* get_error -  Function that prints errors */
 void get_error(size_t count, char *line_argument);
 
 /*TOOLS*/
 /* add_nodeint_end - adds a new node at the end of a dir_t list*/
-dir_t *add_nodeint_end(garbage_collector_t *GC, dir_t **head, char *directory);
+dir_t *add_nodeint_end(M_GC, dir_t **head, char *directory);
 /* str_concat - concatenates two strings*/
-char *str_concat(garbage_collector_t *GC, char *s1, char *s2);
+char *str_concat(M_GC, char *s1, char *s2);
 /* copy_path_from_env - This function copies the content of PATH to the env*/
 void copy_path_from_env(char **env, char *path);
 /* handle_sigint - Function to handle Ctrl + C */

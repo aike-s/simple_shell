@@ -4,12 +4,11 @@
  * the commands
  * @cmd_argumment: Argument which receives the address and file to be executed
  * @env: Environment Where to look for all Path
- * @GC: garbage collector
+ * @M_GC: garbage collector
  * @line: linea dondere
  * Return: Always 0
  */
-int exec(garbage_collector_t *GC, char *cmd_argumment[], char **env,
-char *line)
+int exec(M_GC, char *cmd_argumment[], char **env, char *line)
 {
 	pid_t child;
 	int status;
@@ -21,11 +20,9 @@ char *line)
 	{
 		if (execve(cmd_argumment[0], cmd_argumment, env) == -1)
 		{
-		/*if the execution fails free everything and continue*/
+			/*if the execution fails free everything and continue*/
 			GC->free_all(GC);
-			free_garbage_collector(GC);
-			free(GC);
-			free(line);
+			free_garbage_collector(GC), free(GC), free(line);
 			exit(127);
 		}
 	}

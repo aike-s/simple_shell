@@ -3,10 +3,10 @@
  * _split - function to cut into pieces the line that sent us
  * and organize them as pointers to each string of the line
  * @line: The command line that sent us
- * @GC: parameter to make release of mallocs
+ * @M_GC: parameter to make release of mallocs
  * Return: tokens that is a double pointer pointing to each string
  **/
-char **_split(garbage_collector_t *GC, char *line)
+char **_split(M_GC, char *line)
 {
 	/*tokens will be a pointer to every string in line*/
 	char **tokens, *tmp_line;
